@@ -1,19 +1,31 @@
+let xPosition;
+let speed = 4;
+let diameter = 40;
+
 function setup() {
-  createCanvas(400, 400)
-  
+  createCanvas(400, 400);
+  xPosition = width/2;
   
 }
 
 function draw() {
   background(70, 200, 70);
-  rect(200, 200, 100, 100);
-  fill(230, 90, 89, frameCount)
+  ellipse(xPosition, height/2, diameter);
+  xPosition += speed;
+
+    if (xPosition >= width || xPosition <= 0){
+      speed = speed *-1;
+    }
 
   }
  
 function keyPressed() {
   if (key == 'j' || key == 'J'){
-  console.log("mic check... J edition");
+  if(speed <0) {
+    console.log('to the left')
+  } else {
+    console.log('to the right')
+  }
 }
   }
 
