@@ -11,6 +11,8 @@ function draw() {
 
   }
  
-
+function keyPressed() {
+  console.log("mic check");
+}
 
 
