@@ -1,48 +1,40 @@
 //global variables
-let topCircleMovement;
-let bottomCircleMovement;
-let topSpeed = 4;
-let bottomSpeed = 4;
+let xPosition;
+let speed = 0;
 let diameter = 40; 
+let randomGray = 150
 
 function setup() {
   createCanvas(400, 400)
   xPosition = width/2;
-  topCircleMovement = width/2
-  bottomCircleMovement = width/2
+  
 }
 
 function draw() {
   background(200, 270, 23);
-
-  //bottom circle
-  ellipse(bottomCircleMovement, height/2, diameter);
-
-
-  //top circle
-  ellipse(topCircleMovement, height/3, diameter/2);
-
-  topCircleMovement += topSpeed;
-
-    if (topCircleMovement >= width || topCircleMovement <= 0) {
-    topSpeed = topSpeed * -1;
-
-  }
-
-  bottomCircleMovement += bottomSpeed;
-    
-    if (bottomCircleMovement >= width || bottomCircleMovement <=0) {
-        bottomSpeed = bottomSpeed * -1;
-    }
-   
-   
-    if (mouseIsPressed == true) {
-      bottomSpeed = 0
-    }
-
-  }
-
-  function mousePressed(){
   
+  fill(randomGray);
+  
+  ellipse(xPosition, height/2, diameter);
+
+
+  xPosition += speed;
+
+    if (xPosition >= width || xPosition <= 0) {
+    speed = speed * -1;
+
+  }
+
+   if (mouseIsPressed == true){
+    
+   }
+
+   if (mouseIsPressed == true && speed == 0){
+    speed = 4;
+    randomGray = random(1,255);
+   } else if (mouseIsPressed == true){
+      speed = 0;
+   }
+   
   
   }
