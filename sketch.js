@@ -1,17 +1,14 @@
-//global variables
-
-
 function setup() {
   createCanvas(400, 400)
+  
   
 }
 
 function draw() {
-if (millis() > 10000) {
-  background(70, 200, 70)
-} else {
-  background(200, 50, 90)
-}
+  background(70, 200, 70);
+  rect(200, 200, 100, 100);
+  fill(230, 90, 89, frameCount)
+
   }
  
 
