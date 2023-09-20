@@ -12,7 +12,9 @@ function draw() {
   }
  
 function keyPressed() {
-  console.log("mic check");
+  if (key == 'j' || key == 'J'){
+  console.log("mic check... J edition");
 }
+  }
 
 
